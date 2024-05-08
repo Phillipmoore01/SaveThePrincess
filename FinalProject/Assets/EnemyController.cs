@@ -5,22 +5,26 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Transition transition;
-    public static int Health = 5;
+    public static int Health = 20;
     [SerializeField] float speed = 0f;
+    public static int currentHP = 20;
 
     [SerializeField] int Attack = 1;
-
-    //public static int Health = 5;
     
-        public void OnTriggerEnter2D(Collider2D other){
+    public void OnTriggerEnter2D(Collider2D other){
         Debug.Log("Enemy touched");
         
-        // Transition to the battle screen
         transition.fadeToColor("BattleScene");
         Destroy(this.gameObject);
     }
 
-    public static void TakeDamage(int pAttack){
-        Health -= pAttack;
+    public static bool TakeDamage(int pAttack){
+        currentHP = currentHP - pAttack;
+        if(currentHP <= 0){
+            return true;
+            Debug.Log(currentHP);
+        }
+        else
+            return false;
     }
 }

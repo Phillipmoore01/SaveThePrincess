@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] PlayerInput something;
+    
     void Update()
     {
         Vector3 input = Vector3.zero;
@@ -26,6 +26,8 @@ public class PlayerInputHandler : MonoBehaviour
             input.x = 1;
         }
 
-        something.MovePlayerTrans(input);
+        something.MovePlayerTransform(input);
+        something.MoveCreature(input);
     }
+    
 }

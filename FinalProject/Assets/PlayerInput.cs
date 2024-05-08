@@ -6,36 +6,34 @@ public class PlayerInput : MonoBehaviour
 {
    
     [Header("Fields")]
-    [SerializeField] int Health = 100;
     [SerializeField] float speed = 0f;
     [SerializeField] string cName = "Player1";
     [SerializeField] Vector3  homePosition = Vector3.zero;
-    [SerializeField] GameObject Point;
     [SerializeField] GameObject Enemy;
+    [SerializeField] GameObject Player;
+    public int _health = 100;
+    public Transform movePoint;
     Rigidbody2D rb;
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-    //    transform.position += new Vector3(-1,0,0) * Time.deltaTime;
+
     }
 
     public void MoveCreature(Vector3 direction){
-        rb.velocity = direction*speed;
-      //  transform.position += direction * Time.deltaTime * speed;
+       rb.velocity = direction*speed;
     }
 
-  //  public void GetPoint(){
-  //      GameObject.Find("PointTracker").GetComponent<PointTracker>().RegisterPoint();
-//        GetComponent<AudioSource>().Play();
- //   }
-
-    public void MovePlayerTrans(Vector3 direction){
+    public void MovePlayerTransform(Vector3 direction){
         transform.position += direction * Time.deltaTime * speed;
+    }
+
+    public PlayerInput(int health){
+        _health = health;
     }
 }

@@ -45,7 +45,7 @@ public class Transition : MonoBehaviour
                  SceneManager.LoadScene("GameScene");
             }
             else{
-                SceneManager.LoadScene("BattleScene");
+                SceneManager.LoadScene(newScene);
             }
         }
     }

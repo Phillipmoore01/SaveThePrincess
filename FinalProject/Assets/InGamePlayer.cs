@@ -5,7 +5,20 @@ using UnityEngine;
 public class InGamePlayer : MonoBehaviour
 {
     
-    [SerializeField] public int Health = 100;
-    public int AP = 1;
+    public static int Health = 100;
+    [SerializeField] GameObject Enemy;
+    public static int currentHP = 100;
+
+
+
+
+    public static bool TakeDamage(int pAttack){
+        Health -= pAttack;
+        if(currentHP <= 0){
+            return true;
+        }
+        else
+            return false;
+    }
 
 }

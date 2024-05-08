@@ -5,16 +5,6 @@ using UnityEngine;
 public class MainMenuHanfdler : MonoBehaviour
 {
     [SerializeField] private Transition transition;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
      public void Play(){
        transition.fadeToColor("GameScene");
