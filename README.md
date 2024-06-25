@@ -6,4 +6,4 @@ Semester long Project for GameDev Spring 2024
   * Locate SaveThePrincess.zip
   * Unzip that file locate FinalProjet.exe
   * Run the application
-# Status: Playable but Still being worked on
+## Status: Playable but Still being worked on
